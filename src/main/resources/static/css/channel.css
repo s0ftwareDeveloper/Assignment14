@@ -1,0 +1,109 @@
+a:hover {
+    color: gray;
+}
+
+a:visited {
+    color: white;
+}
+
+.other-user-message-div {
+    margin: 10px;
+    background-image: linear-gradient(to right, #6f63f3, #bb4ee8);
+    width: auto;
+    padding: 15px;
+    border-radius: 15px 15px 15px 2px;
+    align-self: flex-start;
+}
+
+.current-user-message-div {
+    margin: 10px;
+    background: #2c2c32;
+    width: auto;
+    padding: 15px;
+    border-radius: 15px 15px 2px 15px;
+    align-self: flex-end;
+}
+
+.sender {
+    font-family: Raleway-Bold, serif;
+    color: white;
+}
+
+.text {
+    font-family: Raleway-Regular, serif;
+    color: white;
+}
+
+.text-element-div {
+    padding: 20px;
+    margin: 20px 50px;
+}
+
+.channels {
+    width: 25%;
+    border-left: solid #6655e6 4px;
+    margin-bottom: 0;
+}
+
+.messages-textarea-div {
+    width: 75%;
+    background: #1a1a1e;
+    border-left: solid #fe707c 4px;
+    border-radius: 15px;
+    padding: 0 0 10px 0;
+    margin-bottom: 0;
+}
+
+.channels-messages-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.textarea-div {
+    display: flex;
+}
+
+#textarea {
+    background: #26272d;
+    border: none;
+    outline: none;
+    resize: none;
+    box-shadow: none;
+    color: white;
+    border-radius: 15px;
+    font-family: Raleway-Regular, serif;
+    margin: 10px 50px;
+    padding: 20px;
+    font-size: 1em;
+    flex: 1;
+}
+
+#textarea:active {
+    border: none;
+}
+
+#messages-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 500px;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #f1f1f1;
+}

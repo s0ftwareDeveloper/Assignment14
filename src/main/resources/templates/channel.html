@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="'#' + ${channel.name}"></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/channel.css}" href="/css/channel.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/boilerplate.css}" href="/css/boilerplate.css"/>
+</head>
+<body>
+<input type="hidden" id="channelId" th:value="${channel.channelId}"/>
+
+<div class="text-element-div">
+    <h1 th:text="'Welcome to #' + ${channel.name}"></h1>
+</div>
+<div class="channels-messages-div">
+    <div class="channels text-element-div">
+        <h3>Channels</h3>
+        <hr/>
+        <div class="channels-container">
+            <div class="channel-container" th:each="channel : ${channels}">
+                <a class="channel-names" th:href="@{/channels/{channelId}(channelId=${channel.channelId})}"
+                   th:text="'#' + ${channel.name}"></a>
+            </div>
+        </div>
+    </div>
+    <div class="messages-textarea-div text-element-div">
+        <div id="messages-container" class="text-element-div"></div>
+        <label for="textarea"></label>
+        <div class="textarea-div">
+            <textarea id="textarea" placeholder="Type message..."></textarea>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/channel.js"></script>
+</body>
+</html>

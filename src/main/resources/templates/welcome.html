@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/welcome.css}" href="/css/welcome.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/boilerplate.css}" href="/css/boilerplate.css"/>
+</head>
+<body>
+<div class="text-element-div">
+    <h1>Welcome</h1>
+    <hr>
+    <h3>What is your name?</h3>
+</div>
+<form th:action="@{/welcome}" method="post">
+    <div class="input-container">
+        <label><input id="name-input" required type="text" th:field="${user.name}" placeholder="Name..."/></label>
+        <input id="submit-btn" type="submit" value="Create New User"/>
+    </div>
+</form>
+<script type="text/javascript" src="/js/welcome.js"></script>
+</body>
+</html>

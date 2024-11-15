@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Raleway-Bold;
+    src: url(Raleway-Bold.ttf);
+}
+
+@font-face {
+    font-family: Raleway-Regular;
+    src: url(Raleway-Regular.ttf);
+}
+
+body {
+    background: #1f1f22;
+}
+
+h1, h3 {
+    text-align: center;
+    font-family: Raleway-Bold, serif;
+    color: white;
+}
+
+.text-element-div {
+    border-radius: 15px;
+    background: #1a1a1e;
+}
+
+.channel-container {
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px;
+    background: #1a1a1e;
+    align-self: center;
+}
+
+.channel-container:hover {
+    background: #26272d;
+}
+
+.channels-container {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    font-family: Raleway-Regular, serif;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+}

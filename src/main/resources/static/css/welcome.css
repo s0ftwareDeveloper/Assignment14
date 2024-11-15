@@ -1,0 +1,42 @@
+.text-element-div {
+    padding: 30px 55px;
+    margin: 20px 50px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 30px 55px;
+    margin: auto 50px;
+    height: 60vh;
+    background: #1a1a1e;
+    align-items: center;
+    justify-content: center;
+}
+
+#name-input {
+    background: #2c2c32;
+    border-radius: 15px;
+    padding: 25px;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    font-family: Raleway-Regular, serif;
+}
+
+#submit-btn {
+    margin-top: 25px;
+    border-radius: 15px;
+    border: none;
+    padding: 15px;
+    background: #2c2c32;
+    color: white;
+    font-family: Raleway-Bold, serif;
+    font-size: 1.8em;
+}
+
+#submit-btn:hover {
+    background: #26272d;
+}
