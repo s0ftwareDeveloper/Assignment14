@@ -11,7 +11,7 @@
 <input type="hidden" id="channelId" th:value="${channel.channelId}"/>
 
 <div class="text-element-div">
-    <h1 th:text="'Welcome to #' + ${channel.name}"></h1>
+    <h1><span id="user-name-span"></span>, welcome to #<span th:text="${channel.name}"></span></h1>
 </div>
 <div class="channels-messages-div">
     <div class="channels text-element-div">

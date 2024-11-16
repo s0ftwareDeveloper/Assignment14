@@ -1,9 +1,12 @@
 let textarea = document.querySelector("#textarea")
 let channelId = document.querySelector('#channelId').value
+let userName = document.querySelector('#user-name-span')
 
 if (sessionStorage.getItem('user') == null) {
     window.location.href = '/welcome';
 }
+
+userName.textContent = sessionStorage.getItem('user')
 
 /**
  * Calls send message when enter is pressed
@@ -36,8 +39,6 @@ function sendMessage(messageText) {
         body: JSON.stringify(message)
     })
         .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error: ', error))
 }
 
 /**
@@ -50,21 +51,23 @@ function createMessageDivs(messages) {
     messagesContainer.innerHTML = ''; // clear previous data
     messages.forEach(message => {
         const messageDiv = document.createElement('div')
+        messageDiv.classList.add('message-div')
+
         if (message.senderId === parseInt(sessionStorage.getItem('currentUserId'))) {
             messageDiv.classList.add('current-user-message-div')
         } else {
             messageDiv.classList.add('other-user-message-div')
-        }
 
-        const nameSpan = document.createElement('span')
-        nameSpan.textContent = `${message.sender}: `
-        nameSpan.classList.add('sender')
+            const nameSpan = document.createElement('span')
+            nameSpan.textContent = `${message.sender}`
+            nameSpan.classList.add('sender')
+            messageDiv.appendChild(nameSpan)
+        }
 
         const textSpan = document.createElement('span')
         textSpan.textContent = `${message.text}`
         textSpan.classList.add('text')
 
-        messageDiv.appendChild(nameSpan)
         messageDiv.appendChild(textSpan)
 
         messagesContainer.appendChild(messageDiv)

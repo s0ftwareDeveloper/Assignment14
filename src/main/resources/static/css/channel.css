@@ -6,6 +6,11 @@ a:visited {
     color: white;
 }
 
+.message-div {
+    display: flex;
+    flex-direction: column;
+}
+
 .other-user-message-div {
     margin: 10px;
     background-image: linear-gradient(to right, #6f63f3, #bb4ee8);

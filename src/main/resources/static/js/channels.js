@@ -3,6 +3,7 @@ if (sessionStorage.getItem('user') == null) {
     window.location.href = '/welcome';
 } else {
     let userId = document.querySelector('#userId').value
-    sessionStorage.setItem('currentUserId', userId)
-    console.log("channels current user id: " + sessionStorage.getItem("currentUserId"))
+    if (userId > 0) {
+        sessionStorage.setItem('currentUserId', userId)
+    }
 }
