@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 @Service
@@ -21,7 +22,8 @@ public class ChannelService {
 
 
     public Channel findById(Long id) {
-        return channelRepo.findByChannelId(id);
+        Optional<Channel> channel = channelRepo.findById(id);
+        return channel.orElse(null);
     }
 
     public Channel save(Channel channel) {
