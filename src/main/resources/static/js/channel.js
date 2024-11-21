@@ -1,12 +1,11 @@
 let textarea = document.querySelector("#textarea")
 let channelId = document.querySelector('#channelId').value
 let userName = document.querySelector('#user-name-span')
+let userId = sessionStorage.getItem('currentUserId')
 
-if (sessionStorage.getItem('user') == null) {
-    window.location.href = '/welcome';
-}
+console.log(sessionStorage)
 
-userName.textContent = sessionStorage.getItem('user')
+userName.textContent = user
 
 /**
  * Calls send message when enter is pressed
@@ -27,8 +26,8 @@ function sendMessage(messageText) {
 
     const message = {
         "text": messageText,
-        "sender": sessionStorage.getItem('user'),
-        "senderId": parseInt(sessionStorage.getItem('currentUserId'))
+        "sender": user,
+        "senderId": parseInt(userId)
     }
 
     fetch(`http://localhost:8080/channels/${channelId}`, {
@@ -53,7 +52,7 @@ function createMessageDivs(messages) {
         const messageDiv = document.createElement('div')
         messageDiv.classList.add('message-div')
 
-        if (message.senderId === parseInt(sessionStorage.getItem('currentUserId'))) {
+        if (message.senderId === parseInt(userId)) {
             messageDiv.classList.add('current-user-message-div')
         } else {
             messageDiv.classList.add('other-user-message-div')

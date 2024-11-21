@@ -14,4 +14,9 @@ public class UserService {
     public User save(User user) {
         return userRepo.save(user);
     }
+
+    @Override
+    public String toString() {
+        return userRepo.findAll().toString();
+    }
 }
