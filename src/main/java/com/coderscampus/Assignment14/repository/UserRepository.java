@@ -16,12 +16,12 @@ public class UserRepository {
         return user;
     }
 
-    public User findByName(String name) {
+    /*public User findByName(String name) {
         return users.stream().filter(user -> Objects.equals(user.getName(), name))
                           .findFirst().orElse(null);
     }
 
     public List<User> findAll() {
         return users;
-    }
+    }*/
 }
