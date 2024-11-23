@@ -21,7 +21,7 @@ public class ChannelController {
 
     @GetMapping("/channels")
     public String getChannels(@ModelAttribute("user") User user, ModelMap model) {
-        List<Channel> channels = channelService.getChannelList();
+        List<Channel> channels = channelService.findAll();
         model.addAttribute("channels", channels);
         return "channels";
     }
@@ -32,7 +32,7 @@ public class ChannelController {
         if (channel == null) {
             return "redirect:/error";
         }
-        List<Channel> channels = channelService.getChannelList();
+        List<Channel> channels = channelService.findAll();
         model.addAttribute("channels", channels);
         model.addAttribute("channel", channel);
         return "channel";

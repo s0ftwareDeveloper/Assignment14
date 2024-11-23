@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/css/boilerplate.css"/>
 </head>
 <body>
-<input type="hidden" id="channelId" th:value="${channel.channelId}"/>
+<input type="hidden" id="channelId" th:value="${channel.id}"/>
 
 <div class="text-element-div">
     <h1><span id="user-name-span"></span>, welcome to #<span th:text="${channel.name}"></span></h1>
@@ -19,7 +19,7 @@
         <hr/>
         <div class="channels-container">
             <div class="channel-container" th:each="channel : ${channels}">
-                <a class="channel-names" th:href="@{/channels/{channelId}(channelId=${channel.channelId})}"
+                <a class="channel-names" th:href="@{/channels/{channelId}(channelId=${channel.id})}"
                    th:text="'#' + ${channel.name}"></a>
             </div>
         </div>

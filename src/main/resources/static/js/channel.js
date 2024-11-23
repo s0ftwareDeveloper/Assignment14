@@ -1,9 +1,6 @@
 let textarea = document.querySelector("#textarea")
 let channelId = document.querySelector('#channelId').value
 let userName = document.querySelector('#user-name-span')
-let userId = sessionStorage.getItem('currentUserId')
-
-console.log(sessionStorage)
 
 userName.textContent = user
 
@@ -26,8 +23,7 @@ function sendMessage(messageText) {
 
     const message = {
         "text": messageText,
-        "sender": user,
-        "senderId": parseInt(userId)
+        "sender": user
     }
 
     fetch(`http://localhost:8080/channels/${channelId}`, {
@@ -52,7 +48,7 @@ function createMessageDivs(messages) {
         const messageDiv = document.createElement('div')
         messageDiv.classList.add('message-div')
 
-        if (message.senderId === parseInt(userId)) {
+        if (message.sender === sessionStorage.getItem('user')) {
             messageDiv.classList.add('current-user-message-div')
         } else {
             messageDiv.classList.add('other-user-message-div')

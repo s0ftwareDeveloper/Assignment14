@@ -33,7 +33,7 @@ public class MessageController {
     public Boolean saveMessage(@PathVariable Long channelId, @RequestBody MessageDTO messageDto) {
         try {
             Channel channel = channelService.findById(channelId);
-            Message message = new Message(messageDto.getText(), messageDto.getSender(), channel, messageDto.getSenderId());
+            Message message = new Message(messageDto.getText(), messageDto.getSender(), channel);
             channelService.addMessage(channel, message);
             messageService.save(message);
             channelService.save(channel);
@@ -56,7 +56,7 @@ public class MessageController {
     public List<MessageDTO> getMessages(@PathVariable Long channelId) {
         Channel channel = channelService.findById(channelId);
         return channel.getMessages().stream()
-                .map(message -> new MessageDTO(message.getText(), message.getSender(), message.getSenderId()))
+                .map(message -> new MessageDTO(message.getText(), message.getSender()))
                 .collect(Collectors.toList());
     }
 }

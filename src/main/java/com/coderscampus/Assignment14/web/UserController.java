@@ -42,9 +42,16 @@ public class UserController {
     }
 
     @PostMapping("/welcome")
-    public String postWelcomePage(User user, RedirectAttributes redirectAttributes, HttpSession session) {
-        redirectAttributes.addFlashAttribute("user", userService.save(user));
+    public String postWelcomePage(User user, HttpSession session) {
+        userService.save(user);
         session.setAttribute("user", user);
         return "redirect:/channels";
+    }
+
+    @GetMapping("/username-exists")
+    @ResponseBody
+    public Boolean usernameExists(@RequestBody User user) {
+        List<User> users = userService.findAll();
+        return users.contains(user);
     }
 }

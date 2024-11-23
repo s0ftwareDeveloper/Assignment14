@@ -7,16 +7,10 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
 @Getter
 @Setter
 public class Channel {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long channelId;
+    private long id;
     private String name;
-    @OneToMany(mappedBy = "channel", fetch = FetchType.LAZY)
     private List<Message> messages = new ArrayList<>();
-
 }
