@@ -19,20 +19,19 @@ h1, h3 {
 }
 
 .text-element-div {
-    border-radius: 15px;
-    background: #1a1a1e;
+    /*background: #1a1a1e;*/
 }
 
 .channel-container {
-    border-radius: 15px;
-    padding: 15px;
-    margin: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
     background: #1a1a1e;
-    align-self: center;
+    /*align-self: center;*/
 }
 
 .channel-container:hover {
-    background: #26272d;
+    background: #35373c;
 }
 
 .channels-container {
@@ -45,5 +44,5 @@ a {
     padding: 5px;
     text-decoration: none;
     font-size: 1.2em;
-    color: white;
+    color: #949b99;
 }

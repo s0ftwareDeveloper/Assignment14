@@ -3,7 +3,7 @@ a:hover {
 }
 
 a:visited {
-    color: white;
+    color: #949b99;
 }
 
 .message-div {
@@ -41,20 +41,20 @@ a:visited {
 
 .text-element-div {
     padding: 20px;
-    margin: 20px 50px;
 }
 
 .channels {
     width: 25%;
     border-left: solid #6655e6 4px;
+    background: #2b2d31;
     margin-bottom: 0;
 }
 
 .messages-textarea-div {
     width: 75%;
-    background: #1a1a1e;
-    border-left: solid #fe707c 4px;
-    border-radius: 15px;
+    /*background: #1a1a1e;*/
+    background: #313338;
+    /*border-left: solid #fe707c 4px;*/
     padding: 0 0 10px 0;
     margin-bottom: 0;
 }
