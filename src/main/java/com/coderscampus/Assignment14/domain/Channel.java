@@ -2,12 +2,8 @@ package com.coderscampus.Assignment14.domain;
 
 import com.coderscampus.Assignment14.repository.MessageRepository;
 import com.coderscampus.Assignment14.service.MessageService;
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter

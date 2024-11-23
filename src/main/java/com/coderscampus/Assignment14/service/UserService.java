@@ -17,11 +17,11 @@ public class UserService {
         return userRepo.save(user);
     }
 
-    public List<User> findAll() {
+   /* public List<User> findAll() {
         return userRepo.findAll();
     }
 
     public User findByName(String name) {
         return userRepo.findByName(name);
-    }
+    }*/
 }

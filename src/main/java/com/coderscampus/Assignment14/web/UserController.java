@@ -1,23 +1,12 @@
 package com.coderscampus.Assignment14.web;
 
-import com.coderscampus.Assignment14.domain.Channel;
-import com.coderscampus.Assignment14.domain.Message;
 import com.coderscampus.Assignment14.domain.User;
-import com.coderscampus.Assignment14.dto.MessageDTO;
-import com.coderscampus.Assignment14.service.ChannelService;
-import com.coderscampus.Assignment14.service.MessageService;
 import com.coderscampus.Assignment14.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import java.util.List;
-import java.util.stream.Collectors;
-
 
 @AllArgsConstructor
 @Controller

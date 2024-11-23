@@ -3,7 +3,6 @@ package com.coderscampus.Assignment14.repository;
 import com.coderscampus.Assignment14.domain.Channel;
 import com.coderscampus.Assignment14.domain.Message;
 import jakarta.annotation.PostConstruct;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
