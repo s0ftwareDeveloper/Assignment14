@@ -20,4 +20,8 @@ public class UserService {
     public List<User> findAll() {
         return userRepo.findAll();
     }
+
+    public User findByName(String name) {
+        return userRepo.findByName(name);
+    }
 }

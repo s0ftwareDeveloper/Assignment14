@@ -47,11 +47,4 @@ public class UserController {
         session.setAttribute("user", user);
         return "redirect:/channels";
     }
-
-    @GetMapping("/username-exists")
-    @ResponseBody
-    public Boolean usernameExists(@RequestBody User user) {
-        List<User> users = userService.findAll();
-        return users.contains(user);
-    }
 }

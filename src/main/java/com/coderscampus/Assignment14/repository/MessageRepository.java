@@ -14,4 +14,8 @@ public class MessageRepository {
     public void save(Message message) {
         messages.add(message);
     }
+
+    public List<Message> findAll(){
+        return messages;
+    }
 }

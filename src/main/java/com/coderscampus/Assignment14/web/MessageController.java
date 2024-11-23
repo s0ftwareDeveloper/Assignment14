@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class MessageController {
 
-    private final MessageService messageService;
     private final ChannelService channelService;
 
     /**
@@ -34,9 +33,7 @@ public class MessageController {
         try {
             Channel channel = channelService.findById(channelId);
             Message message = new Message(messageDto.getText(), messageDto.getSender(), channel);
-            channelService.addMessage(channel, message);
-            messageService.save(message);
-            channelService.save(channel);
+            channelService.save(channel, message);
             return true;
         } catch (Exception e) {
             log.error("e: ", e);
@@ -54,8 +51,9 @@ public class MessageController {
     @GetMapping("/channels/{channelId}/get-messages")
     @ResponseBody
     public List<MessageDTO> getMessages(@PathVariable Long channelId) {
+
         Channel channel = channelService.findById(channelId);
-        return channel.getMessages().stream()
+        return channel.getMessageService().findAll().stream()
                 .map(message -> new MessageDTO(message.getText(), message.getSender()))
                 .collect(Collectors.toList());
     }

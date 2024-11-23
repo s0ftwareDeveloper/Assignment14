@@ -18,12 +18,8 @@ public class ChannelService {
         return channelRepo.findById(id);
     }
 
-    public void addMessage(Channel channel, Message message) {
-        channel.getMessages().add(message);
-    }
-
-    public Channel save(Channel channel) {
-        return channelRepo.save(channel);
+    public Channel save(Channel channel, Message message) {
+        return channelRepo.saveMessage(channel, message);
     }
 
     public List<Channel> findAll() {
