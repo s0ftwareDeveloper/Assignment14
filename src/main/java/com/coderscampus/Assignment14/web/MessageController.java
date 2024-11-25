@@ -2,16 +2,13 @@ package com.coderscampus.Assignment14.web;
 
 import com.coderscampus.Assignment14.domain.Channel;
 import com.coderscampus.Assignment14.domain.Message;
-import com.coderscampus.Assignment14.dto.MessageDTO;
 import com.coderscampus.Assignment14.service.ChannelService;
-import com.coderscampus.Assignment14.service.MessageService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j //for logging
 @Controller
@@ -24,15 +21,13 @@ public class MessageController {
      * Takes in request body info to a MessageDTO. Then takes the info in the messageDTO and
      * assigns it to a new message object to be added to a channel and saved.
      * @param channelId id of the channel
-     * @param messageDto information to be saved in new message object
      * @return if message was saved properly
      */
     @PostMapping("/channels/{channelId}")
     @ResponseBody
-    public Boolean saveMessage(@PathVariable Long channelId, @RequestBody MessageDTO messageDto) {
+    public Boolean saveMessage(@PathVariable Long channelId, @RequestBody Message message) {
         try {
             Channel channel = channelService.findById(channelId);
-            Message message = new Message(messageDto.getText(), messageDto.getSender(), channel);
             channelService.save(channel, message);
             return true;
         } catch (Exception e) {
@@ -48,13 +43,10 @@ public class MessageController {
      * @param channelId id of the channel
      * @return list of messageDTOs
      */
-    @GetMapping("/channels/{channelId}/get-messages")
     @ResponseBody
-    public List<MessageDTO> getMessages(@PathVariable Long channelId) {
-
+    @GetMapping("/channels/{channelId}/get-messages")
+    public List<Message> getMessages(@PathVariable Long channelId) {
         Channel channel = channelService.findById(channelId);
-        return channel.getMessageService().findAll().stream()
-                .map(message -> new MessageDTO(message.getText(), message.getSender()))
-                .collect(Collectors.toList());
+        return channel.getMessageService().findAll();
     }
 }

@@ -2,11 +2,11 @@ package com.coderscampus.Assignment14.web;
 
 import com.coderscampus.Assignment14.domain.User;
 import com.coderscampus.Assignment14.service.UserService;
-import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @AllArgsConstructor
 @Controller
@@ -20,20 +20,24 @@ public class UserController {
     }
 
     @GetMapping("/welcome")
-    public String getWelcomePage(ModelMap model, HttpSession session) {
-        User user = (User) session.getAttribute("user");
-
-        if (user == null) {
-            user = new User();
-        }
-        model.addAttribute("user", user);
+    public String getWelcomePage() {
         return "welcome";
     }
 
     @PostMapping("/welcome")
-    public String postWelcomePage(User user, HttpSession session) {
-        userService.save(user);
-        session.setAttribute("user", user);
+    public String postWelcomePage() {
         return "redirect:/channels";
+    }
+
+    @ResponseBody
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        return userService.findAll();
+    }
+
+    @ResponseBody
+    @PostMapping("/saveUser")
+    public User saveUser(@RequestBody User user) {
+        return userService.save(user);
     }
 }

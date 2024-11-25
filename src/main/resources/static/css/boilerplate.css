@@ -8,41 +8,7 @@
     src: url(Raleway-Regular.ttf);
 }
 
-body {
-    background: #1f1f22;
-}
-
-h1, h3 {
-    text-align: center;
-    font-family: Raleway-Bold, serif;
-    color: white;
-}
-
-.text-element-div {
-    /*background: #1a1a1e;*/
-}
-
-.channel-container {
-    border-radius: 5px;
-    padding: 5px;
-    margin: 2px;
-    background: #1a1a1e;
-    /*align-self: center;*/
-}
-
-.channel-container:hover {
-    background: #35373c;
-}
-
-.channels-container {
-    display: flex;
-    flex-direction: column;
-}
-
-a {
-    font-family: Raleway-Regular, serif;
-    padding: 5px;
-    text-decoration: none;
-    font-size: 1.2em;
-    color: #949b99;
+@font-face {
+    font-family: Raleway-SemiBold;
+    src: url(Raleway-SemiBold.ttf);
 }

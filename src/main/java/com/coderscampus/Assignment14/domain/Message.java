@@ -9,6 +9,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Message {
     private String text;
-    private String sender;
     private Channel channel;
+    private User user;
 }

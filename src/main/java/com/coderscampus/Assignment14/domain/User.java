@@ -7,4 +7,6 @@ import lombok.Setter;
 @Setter
 public class User {
     private String name;
+    private String iconColor;
+    private String iconBackgroundColor;
 }

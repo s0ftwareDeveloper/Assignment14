@@ -8,10 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Channel {
-
     private long id;
     private String name;
     private MessageRepository messageRepository = new MessageRepository();
     private MessageService messageService = new MessageService(messageRepository);
-
 }

@@ -3,7 +3,6 @@ package com.coderscampus.Assignment14.web;
 import com.coderscampus.Assignment14.domain.Channel;
 import com.coderscampus.Assignment14.domain.User;
 import com.coderscampus.Assignment14.service.ChannelService;
-import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

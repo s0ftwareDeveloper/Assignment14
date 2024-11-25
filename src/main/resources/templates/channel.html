@@ -10,29 +10,62 @@
 <body>
 <input type="hidden" id="channelId" th:value="${channel.id}"/>
 
-<div class="text-element-div">
-    <h1><span id="user-name-span"></span>, welcome to #<span th:text="${channel.name}"></span></h1>
-</div>
-<div class="channels-messages-div">
-    <div class="channels text-element-div">
-        <h3>Channels</h3>
-        <hr/>
-        <div class="channels-container">
-            <div class="channel-container" th:each="channel : ${channels}">
-                <a class="channel-names" th:href="@{/channels/{channelId}(channelId=${channel.id})}"
-                   th:text="'#' + ${channel.name}"></a>
-            </div>
+<header>
+    <div class="header-indent">
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="modeToggle">
+                <span class="slider round"></span>
+            </label>
         </div>
     </div>
-    <div class="messages-textarea-div text-element-div">
-        <div id="messages-container" class="text-element-div"></div>
+    <div class="channels-header">
+        <span class="indent"></span>
+        <span class="hashtag">
+        <i class="fa-solid fa-hashtag hashtag"></i>
+        </span>
+        <span class="channel-name" th:text="${channel.name}"></span>
+    </div>
+</header>
+<div class="main-elements-div">
+    <div class="channels">
+        <div class="channels-container">
+            <button class="dropdown-button">
+                <i class="fa-solid fa-angle-down" id="dropdown-icon"></i>
+                <span class="text dropdown-button">TEXT CHANNELS</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li th:each="channel : ${channels}">
+                    <a class="channel-names" th:href="@{/channels/{channelId}(channelId=${channel.id})}">
+                        <div class="channel-container">
+                            <i class="fa-solid fa-hashtag"></i>
+                            <span th:text="${channel.name}"></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="user-name-and-icon"></div>
+    </div>
+    <div class="messages-textarea-div">
+        <div class="channel-welcome-and-messages">
+            <div id="messages-container"></div>
+            <div id="welcome-subtitle">This is the start of the #<span th:text="${channel.name}"></span> channel.</div>
+            <div id="welcome">Welcome to #<span th:text="${channel.name}"></span>!</div>
+            <i id="big-hashtag" class="fa-solid fa-hashtag"></i>
+        </div>
         <label for="textarea"></label>
         <div class="textarea-div">
-            <textarea id="textarea" placeholder="Type message..."></textarea>
+            <textarea id="textarea" th:placeholder="${'Message #' + channel.name}" rows=1></textarea>
         </div>
+    </div>
+    <div id="channel-users">
+
     </div>
 </div>
 <script type="text/javascript" src="/js/utils.js"></script>
 <script type="text/javascript" src="/js/channel.js"></script>
+<script src="https://kit.fontawesome.com/7bd24e60f1.js" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -1,5 +1,5 @@
-let user = sessionStorage.getItem('user')
+let userName = sessionStorage.getItem('user')
 
-if (!user) {
+if (!userName) {
     window.location.href = '/welcome';
 }

@@ -5,6 +5,8 @@ import com.coderscampus.Assignment14.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @AllArgsConstructor
 @Service
 public class UserService {
@@ -15,11 +17,8 @@ public class UserService {
         return userRepo.save(user);
     }
 
-   /* public List<User> findAll() {
+    public List<User> findAll() {
         return userRepo.findAll();
     }
 
-    public User findByName(String name) {
-        return userRepo.findByName(name);
-    }*/
 }

@@ -1,9 +1,52 @@
-a:hover {
-    color: gray;
+html, body {
+    min-width: 500px;
+    min-height: 310px;
 }
 
-a:visited {
-    color: #949b99;
+:root {
+    --background-color: #ffffff;
+    --on-background-color: #4e5058;
+    --background-container: #ebedef;
+    --on-background-container: #8a8e97;
+    --text-color: #6d6f78;
+    --primary-color: #ebedef;
+    --on-primary-color: #6d6f78;
+    --primary-container: #ebedef;
+    --secondary-color: #f2f3f5;
+    --on-secondary-color: #5c5e66;
+    --scrollbar: #c4c9ce;
+    --button-active: #d7d8dd;
+    --secondary-text-color: #060607;
+    --header-color: #313338;
+    --big-hashtag-background-color: #6d6f78;
+}
+
+/* Dark mode custom properties */
+.dark-mode {
+    --background-color: #313338;
+    --on-background-color: #b5bac1;
+    --background-container: #383a40;
+    --on-background-container: #6c6e77;
+    --text-color: #dbdee1;
+    --primary-color: #2b2d31;
+    --on-primary-color: #949ba4;
+    --primary-container: #232428;
+    --secondary-color: #2b2d31;
+    --on-secondary-color: #949ba4;
+    --scrollbar: #1a1b1e;
+    --button-active: #3f4248;
+    --secondary-text-color: white;
+    --header-color: #dbdee1;
+    --big-hashtag-background-color: #41434a;
+}
+
+.channel-names {
+    font-family: Raleway-Regular, serif;
+    font-size: 1.2em;
+}
+
+.channel-names:hover {
+    color: var(--text-color);
 }
 
 .message-div {
@@ -20,7 +63,21 @@ a:visited {
     align-self: flex-start;
 }
 
+#user-name-and-icon {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: var(--primary-container);
+}
+
+.user-name-text {
+    font-family: Raleway-Bold, serif;
+    color: var(--secondary-text-color);
+    padding-left: 10px;
+}
+
 .current-user-message-div {
+    color: var(--text-color);
     margin: 10px;
     background: #2c2c32;
     width: auto;
@@ -31,32 +88,109 @@ a:visited {
 
 .sender {
     font-family: Raleway-Bold, serif;
+    /*color: var(--secondary-text-color);*/
     color: white;
 }
 
 .text {
     font-family: Raleway-Regular, serif;
+    /*color: var(--secondary-text-color);*/
     color: white;
 }
 
-.text-element-div {
-    padding: 20px;
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    position: fixed;
+}
+
+.channels-header .indent {
+    width: 2%;
+}
+
+.channels-header {
+    background: var(--background-color);
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hashtag {
+    color: var(--on-primary-color);
+    font-size: 1em;
+    padding: 0 5px;
+}
+
+#big-hashtag {
+    font-size: 4em;
+    color: white;
+    border-radius: 45px;
+    background: var(--big-hashtag-background-color);
+    display: flex;
+    justify-content: center;
+    width: 65px;
+    padding: 10px;
+}
+
+.channel-name {
+    color: var(--header-color);
+    font-family: Raleway-Bold, serif;
+}
+
+.header-indent {
+    width: 19.5%;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.toggle-container {
+    padding-left: 10px;
 }
 
 .channels {
     width: 25%;
-    border-left: solid #6655e6 4px;
-    background: #2b2d31;
+    background: var(--primary-color);
     margin-bottom: 0;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+/*.channels-title {*/
+/*    font-family: Raleway-Bold, serif;*/
+/*    color: #80848e;*/
+/*    font-size: 0.7em;*/
+/*}*/
+
+/*.channels-title-container {*/
+/*    padding : 10px;*/
+/*}*/
+
 .messages-textarea-div {
-    width: 75%;
-    /*background: #1a1a1e;*/
-    background: #313338;
-    /*border-left: solid #fe707c 4px;*/
-    padding: 0 0 10px 0;
+    background: var(--background-color);
+    padding: 60px 0 10px 0;
     margin-bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.channel-container {
+    border-radius: 5px;
+    padding: 8px;
+    margin: 2px 10px;
 }
 
 .channels-messages-div {
@@ -64,23 +198,39 @@ a:visited {
     flex-direction: row;
 }
 
+.header-messages-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-elements-div {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
 .textarea-div {
     display: flex;
 }
 
 #textarea {
-    background: #26272d;
+    background: var(--background-container);
     border: none;
     outline: none;
     resize: none;
     box-shadow: none;
-    color: white;
+    color: var(--secondary-text-color);
     border-radius: 15px;
     font-family: Raleway-Regular, serif;
-    margin: 10px 50px;
+    margin: 0 10px;
     padding: 20px;
     font-size: 1em;
     flex: 1;
+}
+
+#textarea::placeholder{
+    color: var(--on-background-container);
 }
 
 #textarea:active {
@@ -90,25 +240,186 @@ a:visited {
 #messages-container {
     display: flex;
     flex-direction: column;
-    margin: 0;
-    height: 500px;
+    height: auto;
+    justify-content: end;
+    padding-right: 15px;
+    margin-bottom: 10px;
+}
+
+.channel-welcome-and-messages {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 15px;
+    margin-right: 5px;
+    max-height: 730px;
+    height: 90%;
+    overflow-y: scroll;
+}
+
+#welcome {
+    margin-top: 20px;
+    font-family: Raleway-Bold, serif;
+    color: var(--header-color);
+    font-size: 2em;
+}
+
+#welcome-subtitle {
+    font-family: Raleway-Regular, serif;
+    padding: 20px 0;
+    color: var(--on-background-color);
+}
+
+.hashtag {
+    font-size: 24px;
+}
+
+#channel-users {
+    width: 25%;
+    padding: 60px 15px 0 15px;
     overflow-y: auto;
+    background: var(--secondary-color);
+}
+
+.channel-user-name {
+    font-family: Raleway-SemiBold, serif;
+    color: var(--on-secondary-color);
+    padding-left: 10px;
+    letter-spacing: 0.02em;
+}
+
+.icon-user-div {
+    padding: 8px 5px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-container {
+    width: 35px;
+    height: 35px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: end;
 }
 
 ::-webkit-scrollbar {
     width: 7px;
-    height: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #888;
+    background-color: var(--primary-color);
     border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar);
+    border-radius: 10px;
 }
 
-::-webkit-scrollbar-corner {
-    background-color: #f1f1f1;
+.dropdown-button {
+    font-family: Raleway-Bold, serif;
+    font-size: 0.8em;
+    background-color: transparent;
+    color: var(--on-primary-color);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    align-self: start;
+}
+
+.dropdown-button .text {
+    font-size: 1em;
+    padding: 10px;
+}
+
+.dropdown-menu {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: var(--on-primary-color);
+}
+
+/* Rotation animation */
+.fa-angle-down {
+    transition: transform 0.3s ease;
+}
+
+.fa-angle-down.rotate {
+    transform: rotate(-90deg);
+    transform-origin: center center;
+}
+
+.dropdown-menu li.active > .channel-names > .channel-container{
+    color: var(--secondary-text-color);
+    background-color: var(--button-active);
+}
+
+/* Hide the element when the viewport width is 600px or smaller */
+@media (max-width: 980px) {
+    .channels, .header-indent{
+        display: none; /* Hide the element */
+    }
+}
+
+@media (max-width: 670px) {
+    #channel-users{
+        display: none; /* Hide the element */
+    }
+}
+
+@media (max-height: 350px) {
+    header {
+        display: none; /* Hide the element */
+    }
+
+    .channels, .messages-textarea-div, #channel-users {
+        padding-top: 0;
+    }
+}
+
+/* Toggle switch styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--secondary-text-color);
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--on-background-container);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
 }
