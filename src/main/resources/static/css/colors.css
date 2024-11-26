@@ -1,0 +1,47 @@
+/* Default Dark Mode*/
+:root {
+    --background-color: #313338;
+    --on-background-color: #b5bac1;
+    --background-container: #383a40;
+    --on-background-container: #6c6e77;
+    --text-color: #dbdee1;
+
+    --primary-color: #2b2d31;
+    --on-primary-color: #949ba4;
+    --primary-container: #232428;
+
+    --on-primary-container-hover: #DBDEE1;
+    --primary-container-hover: #35373C;
+    --primary-container-active: #404249;
+    --on-primary-container-active: #FAFAFA;
+
+    --scrollbar: #1a1b1e;
+    --button-active: #3f4248;
+    --secondary-text-color: white;
+    --header-color: #dbdee1;
+    --big-hashtag-background-color: #41434a;
+}
+
+/* Light mode custom properties */
+.light-mode {
+    --background-color: #ffffff;
+    --on-background-color: #4e5058;
+    --background-container: #ebedef;
+    --on-background-container: #8a8e97;
+    --text-color: #6d6f78;
+
+    --primary-color: #F2F3F5;
+    --on-primary-color: #5C5E66;
+    --primary-container: #EBEDEF;
+
+    --primary-container-hover: #DFE1E5;
+    --on-primary-container-hover: #313338;
+    --primary-container-active: #D7D9DC;
+    --on-primary-container-active: #060607;
+
+    --scrollbar: #c4c9ce;
+    --button-active: #d7d8dd;
+    --secondary-text-color: #060607;
+    --header-color: #313338;
+    --big-hashtag-background-color: #6d6f78;
+}

@@ -29,15 +29,15 @@
 </header>
 <div class="main-elements-div">
     <div class="channels">
-        <div class="channels-container">
+        <div>
             <button class="dropdown-button">
                 <i class="fa-solid fa-angle-down" id="dropdown-icon"></i>
                 <span class="text dropdown-button">TEXT CHANNELS</span>
             </button>
             <ul class="dropdown-menu">
-                <li th:each="channel : ${channels}">
+                <li class="channel-container" th:each="channel : ${channels}">
                     <a class="channel-names" th:href="@{/channels/{channelId}(channelId=${channel.id})}">
-                        <div class="channel-container">
+                        <div class="channel-text">
                             <i class="fa-solid fa-hashtag"></i>
                             <span th:text="${channel.name}"></span>
                         </div>

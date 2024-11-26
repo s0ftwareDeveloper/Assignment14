@@ -38,6 +38,10 @@ public class UserController {
     @ResponseBody
     @PostMapping("/saveUser")
     public User saveUser(@RequestBody User user) {
+        User existingUser = userService.userExists(user.getName());
+        if(existingUser != null) {
+            return existingUser;
+        }
         return userService.save(user);
     }
 }

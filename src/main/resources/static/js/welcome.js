@@ -78,8 +78,6 @@ submitBtn.addEventListener('click', async () => {
         sessionStorage.setItem('iconColor', iconColor)
         sessionStorage.setItem('iconBackgroundColor', contrastColor(iconColor))
 
-        console.log(iconColor)
-
         const userObject = {
             "name": nameInput.value,
             "iconColor": sessionStorage.getItem('iconColor'),
@@ -93,8 +91,13 @@ submitBtn.addEventListener('click', async () => {
             },
             body: JSON.stringify(userObject)
         })
-            .then(response => console.log(response.json()))
-
+            .then(response => response.json())
+            .then(user => {
+                if(user.iconColor !== sessionStorage.getItem('iconColor')) {
+                    sessionStorage.setItem('iconColor', user.iconColor)
+                    sessionStorage.setItem('iconBackgroundColor', user.iconBackgroundColor)
+                }
+            })
     }
 })
 

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 public class UserRepository {
@@ -17,5 +18,9 @@ public class UserRepository {
 
     public List<User> findAll() {
         return users;
+    }
+
+    public User userExists(String username) {
+        return users.stream().filter(user -> Objects.equals(user.getName(), username)).findFirst().orElse(null);
     }
 }

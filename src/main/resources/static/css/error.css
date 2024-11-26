@@ -1,0 +1,17 @@
+.user-message-div {
+    display: flex;
+}
+
+.current-user {
+    align-self: end;
+}
+
+.other-user-message-div {
+    background-image: linear-gradient(to right, #FDA63E, #F70000);
+}
+
+.message-div a {
+    text-decoration: underline;
+    color: blue;
+    font-family: Raleway-Bold, serif;
+}

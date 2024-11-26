@@ -4,10 +4,96 @@
     <title>404</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="/css/channel.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/boilerplate.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/error.css"/>
 </head>
 <body>
-<h1>404</h1>
-<h3>Oops, there was an error</h3>
-<a th:href="@{/welcome}">Back to safety</a>
+
+<header>
+    <div class="header-indent"></div>
+    <div class="channels-header">
+        <span class="indent"></span>
+        <span class="hashtag">
+        <i class="fa-solid fa-hashtag hashtag"></i>
+        </span>
+        <span class="channel-name">error-404</span>
+    </div>
+</header>
+<div class="main-elements-div">
+    <div class="channels">
+        <div>
+            <button class="dropdown-button">
+                <i class="fa-solid fa-angle-down" id="dropdown-icon"></i>
+                <span class="text dropdown-button">TEXT CHANNELS</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li class="channel-container">
+                    <a class="channel-names" href="#big-hashtag">
+                        <div class="channel-text">
+                            <i class="fa-solid fa-hashtag"></i>
+                            <span>error-404</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="user-name-and-icon"></div>
+    </div>
+    <div class="messages-textarea-div">
+        <div class="channel-welcome-and-messages">
+            <div id="messages-container">
+                <div class="user-message-div current-user">
+                    <div class="message-div current-user-message-div">
+                        <span class="text">Hey, what happened?</span>
+                    </div>
+                </div>
+                <div class="user-message-div">
+                    <div class="message-div other-user-message-div">
+                        <span class="text">Uhhh I don't know...</span>
+                    </div>
+                </div>
+                <div class="user-message-div">
+                    <div class="message-div other-user-message-div">
+                        <img src="/css/bug-meme.webp" alt="Programmer Bug Meme">
+                    </div>
+                </div>
+                <div class="user-message-div current-user">
+                    <div class="message-div current-user-message-div">
+                        <span class="text">o-o</span>
+                    </div>
+                </div>
+                <div class="user-message-div current-user">
+                    <div class="message-div current-user-message-div">
+                        <span class="text">How do I get out of here??</span>
+                    </div>
+                </div>
+                <div class="user-message-div">
+                    <div class="message-div other-user-message-div">
+                        <span class="text">Say less</span>
+                    </div>
+                </div>
+                <div class="user-message-div">
+                    <div class="message-div other-user-message-div">
+                        <a class="text" th:href="@{/welcome}">Back to Safety</a>
+                    </div>
+                </div>
+            </div>
+            <div id="welcome-subtitle">This is the start of the #error-404 channel.</div>
+            <div id="welcome">Welcome to #error-404!</div>
+            <i id="big-hashtag" class="fa-solid fa-hashtag"></i>
+        </div>
+        <label for="textarea"></label>
+        <div class="textarea-div">
+            <textarea id="textarea" placeholder="Message #error-404" rows=1></textarea>
+        </div>
+    </div>
+    <div id="channel-users">
+    </div>
+</div>
+<script type="text/javascript" src="/js/utils.js"></script>
+<script type="text/javascript" src="/js/error.js"></script>
+<script src="https://kit.fontawesome.com/7bd24e60f1.js" crossorigin="anonymous"></script>
+
 </body>
 </html>

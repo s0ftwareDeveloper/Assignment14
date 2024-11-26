@@ -2,6 +2,10 @@ let textarea = document.querySelector("#textarea")
 let channelId = document.querySelector('#channelId').value
 const dropdown = document.querySelector('.dropdown-menu');
 const dropdownIcon = document.querySelector('#dropdown-icon');
+const toggleSwitch = document.getElementById('modeToggle');
+const body = document.body;
+
+toggleSwitch.checked = true;
 
 /**
  * Calls send message when enter is pressed
@@ -174,7 +178,6 @@ function getUsers() {
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             populateUsers(data)
         })
 }
@@ -182,24 +185,8 @@ function getUsers() {
 getUsers()
 
 // poll every 500 ms
-const int = setInterval(getMessages, 500);
-const interval = setInterval(getUsers, 500);
-
-// Stop polling after 10 seconds
-/*setTimeout(() => {
-    clearInterval(interval); // Stop the interval
-    clearInterval(int)
-    console.log("Polling stopped.");
-}, 10000); // 10,000 ms = 10 seconds*/
-
-/*window.addEventListener('resize', function () {
-    if (window.innerWidth < 500) {
-        window.resizeTo(500, window.innerHeight);
-    }
-    if (window.innerHeight < 310) {
-        window.resizeTo(window.innerWidth, 310);
-    }
-});*/
+setInterval(getMessages, 500);
+setInterval(getUsers, 500);
 
 document.addEventListener('DOMContentLoaded', () => {
     // Get the current page URL
@@ -217,16 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleSwitch = document.getElementById('modeToggle');
-    const body = document.body;
-
-    // Check for saved mode in localStorage
-    const savedMode = localStorage.getItem('theme');
-    if (savedMode) {
-        body.classList.add(savedMode);
-        toggleSwitch.checked = savedMode === 'dark-mode';
-    }
-
     // Add event listener to toggle switch
     toggleSwitch.addEventListener('change', () => {
         if (toggleSwitch.checked) {

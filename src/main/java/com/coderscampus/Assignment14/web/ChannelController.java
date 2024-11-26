@@ -36,4 +36,9 @@ public class ChannelController {
         model.addAttribute("channel", channel);
         return "channel";
     }
+
+    @GetMapping("/404")
+    public String get404() {
+        return "error";
+    }
 }

@@ -17,6 +17,10 @@ public class UserService {
         return userRepo.save(user);
     }
 
+    public User userExists(String username) {
+        return userRepo.userExists(username);
+    }
+
     public List<User> findAll() {
         return userRepo.findAll();
     }

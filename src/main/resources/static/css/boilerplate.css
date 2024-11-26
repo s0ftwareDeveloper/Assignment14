@@ -1,3 +1,5 @@
+@import url('colors.css');
+
 @font-face {
     font-family: Raleway-Bold;
     src: url(Raleway-Bold.ttf);
@@ -40,4 +42,84 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 30px 55px;
+    margin: auto 50px;
+    height: 50vh;
+    width: 40vw;
+    background: #1a1a1e;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-element-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #f2f3f5;
+    font-family: Raleway-Regular, serif;
+    letter-spacing: 0.05em;
+    font-size: 2.3em;
+    margin: 0;
+    text-align: center;
+}
+
+h3 {
+    color: #b2b7be;
+    font-family: Raleway-Thin, serif;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.channel-names {
+    font-family: Raleway-Regular, serif;
+    font-size: 1.2em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.channel-container:hover {
+    background: #35373C;
+}
+
+.channel-container {
+    border-radius: 5px;
+    padding: 8px;
+    margin: 2px 10px;
+}
+
+.dropdown-menu li.active {
+    background-color: var(--primary-container-active);
+}
+
+.dropdown-menu li.active a {
+    color: var(--on-primary-container-active);
+}
+
+.dropdown-menu li:not(.active):hover {
+    background: var(--primary-container-hover);
+}
+
+.dropdown-menu li:not(.active):hover a {
+    color: var(--on-primary-container-hover);
+}
+
+.dropdown-menu li a{
+    color: var(--on-primary-color);
+}
+
+.dropdown-menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
