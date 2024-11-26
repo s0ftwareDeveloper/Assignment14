@@ -17,3 +17,27 @@
     font-family: Raleway-Thin;
     src: url("Raleway-Thin.ttf");
 }
+
+html, body {
+    min-width: 500px;
+    min-height: 500px;
+}
+
+body{
+    margin: 0;
+    background-image: url('app-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-width: 500px;
+}
+
+.background-filter {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

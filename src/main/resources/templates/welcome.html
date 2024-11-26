@@ -8,15 +8,10 @@
     <link rel="stylesheet" type="text/css" href="/css/boilerplate.css"/>
 </head>
 <body>
-<!--TODO: Style button-->
-<!--TODO: Style box-->
-<!--TODO: Make style fonts to appropriate size-->
-<!--TODO: Style subtitle to Raleway thin-->
-<!--TODO: Add red asterisk thingy-->
-<!--TODO: Restyle the /welcome page-->
 <!--TODO: Restyle the /channels page-->
 <!--TODO: Restyle the 404 page-->
 <!--TODO: Do skim of classes and clean up code/comments/print or console logs, and reformat-->
+<!--TODO: delete other users with same username if new user is added-->
 <div class="background-filter">
     <form th:action="@{/welcome}" method="post">
         <div class="input-container">
@@ -28,7 +23,7 @@
                 <label for="name-input">NAME <span>*</span></label>
                 <input id="name-input" required type="text"/>
             </div>
-            <input id="submit-btn" type="submit" value="Create New User"/>
+            <input id="submit-btn" type="submit" value="Join"/>
         </div>
     </form>
     <script type="text/javascript" src="/js/welcome.js"></script>
