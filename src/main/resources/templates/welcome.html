@@ -8,21 +8,30 @@
     <link rel="stylesheet" type="text/css" href="/css/boilerplate.css"/>
 </head>
 <body>
+<!--TODO: Style button-->
+<!--TODO: Style box-->
+<!--TODO: Make style fonts to appropriate size-->
+<!--TODO: Style subtitle to Raleway thin-->
+<!--TODO: Add red asterisk thingy-->
 <!--TODO: Restyle the /welcome page-->
 <!--TODO: Restyle the /channels page-->
 <!--TODO: Restyle the 404 page-->
 <!--TODO: Do skim of classes and clean up code/comments/print or console logs, and reformat-->
-<div class="text-element-div">
-    <h1>Welcome</h1>
-    <hr>
-    <h3>What is your name?</h3>
+<div class="background-filter">
+    <form th:action="@{/welcome}" method="post">
+        <div class="input-container">
+            <div class="text-element-div">
+                <h1>Welcome!</h1>
+                <h3>It's a pleasure to have you!</h3>
+            </div>
+            <div id="name-input-container">
+                <label for="name-input">NAME <span>*</span></label>
+                <input id="name-input" required type="text"/>
+            </div>
+            <input id="submit-btn" type="submit" value="Create New User"/>
+        </div>
+    </form>
+    <script type="text/javascript" src="/js/welcome.js"></script>
 </div>
-<form th:action="@{/welcome}" method="post">
-    <div class="input-container">
-        <label><input id="name-input" required type="text" placeholder="Name..."/></label>
-        <input id="submit-btn" type="submit" value="Create New User"/>
-    </div>
-</form>
-<script type="text/javascript" src="/js/welcome.js"></script>
 </body>
 </html>

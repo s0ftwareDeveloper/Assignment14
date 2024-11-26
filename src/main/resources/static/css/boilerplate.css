@@ -12,3 +12,8 @@
     font-family: Raleway-SemiBold;
     src: url(Raleway-SemiBold.ttf);
 }
+
+@font-face {
+    font-family: Raleway-Thin;
+    src: url("Raleway-Thin.ttf");
+}

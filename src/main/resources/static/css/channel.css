@@ -1,6 +1,6 @@
 html, body {
     min-width: 500px;
-    min-height: 310px;
+    min-height: 500px; /*can go down to 310*/
 }
 
 :root {
@@ -167,16 +167,6 @@ header {
     flex-direction: column;
     justify-content: space-between;
 }
-
-/*.channels-title {*/
-/*    font-family: Raleway-Bold, serif;*/
-/*    color: #80848e;*/
-/*    font-size: 0.7em;*/
-/*}*/
-
-/*.channels-title-container {*/
-/*    padding : 10px;*/
-/*}*/
 
 .messages-textarea-div {
     background: var(--background-color);

@@ -192,14 +192,14 @@ const interval = setInterval(getUsers, 500);
     console.log("Polling stopped.");
 }, 10000); // 10,000 ms = 10 seconds*/
 
-window.addEventListener('resize', function () {
+/*window.addEventListener('resize', function () {
     if (window.innerWidth < 500) {
         window.resizeTo(500, window.innerHeight);
     }
     if (window.innerHeight < 310) {
         window.resizeTo(window.innerWidth, 310);
     }
-});
+});*/
 
 document.addEventListener('DOMContentLoaded', () => {
     // Get the current page URL
